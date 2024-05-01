@@ -72,7 +72,8 @@ class UserController {
       const isMatch = await bcrypt.compare(password, user.password);
 
       if (!isMatch) {
-        return next(createHttpError(400, "Username or password incorrect!"));
+        const error = createHttpError(400, "Username or password incorrect!");
+        return next(error);
       }
       const token = sign({ sub: user._id }, config.jwtSecret as string, {
         expiresIn: "7d",
