@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.ts",
-    "build": "pnpm install & tsc",
+    "build": "npm install & tsc",
     "start": "node dist/server.js"
   },
   "keywords": [],
